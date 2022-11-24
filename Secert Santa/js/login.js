@@ -1,51 +1,4 @@
-<!DOCTYPE html>
-
-<html lang = 'en'>
-    <head>
-        <title>Sign up</title>
-        <link rel = "stylesheet" href = "css/signup.css">
-        <link rel = "stylesheet" href = "css/nav.css">
-
-    </head> 
-
-
-<body>
-  <nav>
-    <a href = "home.html">
-    <h2>
-     <img src="https://www.clipartmax.com/png/middle/413-4137704_secret-santa.png" alt="Italian Trulli"> <span class="LOGO">Secret Santa</span><span class="tv"> 
-    </h2>
-      </a>
-  <ul class="nav-link">
-   
-        <li >
-          <a href="login.html">
-          <input type = "button" id = "signin" value ="Sign In" class ="signin"  onclick="location.href='login.html'">
-          </a>
-        </li>
-  </ul>
-</nav>
-    <div class="signup" >
-        <h1>Sign up</h1>
- 
-    <form>
-    <label>First Name </label>
-    <input type="First Name" id="FNAME" name="FNAME" placeholder="First Name" />
-    <label>Last Name </label>
-    <input type="Last Name" id="LNAME" name="LNAME" placeholder="Last Name"/>
-    <label>Email </label>
-    <input type="text" id="email" name="email" placeholder="E-mail" />
-    <label>Password </label>
-    <input type="password" id="password" name="password" placeholder="Password"   />
-    <input type="button" id='signup' name="login" value="Login" />
-    <p id = "error"></p>
-    </form>
-    <p>Already have an account <a href = "login.html">Login Here</a></p>
-</div>
-</body>
-
-<script type="module">
-    // Import the functions you need from the SDKs you need
+  // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
   import { getDatabase,set,ref } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-database.js";
   import { getAuth, createUserWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
@@ -87,8 +40,6 @@ signup.addEventListener('click' ,(e) =>{
           LastName:lastname,
           password:password
       })
-      window.location.href = "login.html";
-
 
   })
   .catch((error) => {
@@ -103,11 +54,6 @@ signup.addEventListener('click' ,(e) =>{
     else if(errorMessage == "Firebase: Error (auth/email-already-in-use)."){
         errorMessage = "Email already in use"
     }
-    else if(errorMessage == "Firebase: Error (auth/network-request-failed)."){
-        errorMessage = "Please check you internet connect "
-    }
-
-
    
     var error = document.getElementById('error');
     error.innerHTML = errorMessage;
@@ -115,7 +61,3 @@ signup.addEventListener('click' ,(e) =>{
     // ..
   });
 })
-
-</script>
-
-</html>

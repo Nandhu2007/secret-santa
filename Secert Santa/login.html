@@ -4,8 +4,25 @@
     <head>
         <title>Sign up</title>
         <link rel = "stylesheet" href = "css/signup.css">
+        <link rel = "stylesheet" href = "css/nav.css">
+
     </head> 
 </html>
+<nav>
+  <a href = "home.html">
+  <h2>
+   <img src="https://www.clipartmax.com/png/middle/413-4137704_secret-santa.png" alt="Italian Trulli"> <span class="LOGO">Secret Santa</span><span class="tv"> 
+  </h2>
+    </a>
+<ul class="nav-link">
+ 
+      <li >
+        <a href="login.html">
+        <input type = "button" id = "signin" value ="Sign In" class ="signin"  onclick="location.href='login.html'">
+        </a>
+      </li>
+</ul>
+</nav>
 
 <body>
     <div class="login" >
@@ -16,7 +33,7 @@
       <label>Username </label>
         <input type = "Text" placeholder="" id = "email">
         <label>Password </label>
-        <input type = "password " placeholder="" id = "password">   
+        <input type="password" id="password" name="password"   />
         <input type = "button"id ="login" value="Log in"> 
     </form>
     <p>Don't have an account <a href = "Signup.html">Sign up Here</a></p>
@@ -60,6 +77,9 @@
         update(ref(database, 'users/' + user.uid),{
           lastlogin: dt
         })
+        window.location.href = "sucsefulacct.html";
+
+
       })
     // ...
     })
